@@ -90,12 +90,26 @@ function signIn() {
 <div class="social-signin-buttons">
     <button class="social-btn google-btn">Sign in with Google</button>
     <button class="social-btn facebook-btn">Sign in with Facebook</button>
-    <button class="view-btn" onclick="location.href='view_sk_officials.php'">View Current SK Officials</button>
-<button class="view-btn" onclick="location.href='view_sk_candidates.php'">View Aspiring SK Candidates</button>
+    <button class="view-btn1" onclick="location.href='view_sk_officials.php'">View Current SK Officials</button>
+    <button class="view-btn1" onclick="location.href='view_sk_candidates.php'">View Aspiring SK Candidates</button>
 
 </div>
 
 <style>
+    .view-btn1 {
+        width: 50%;
+        padding: 12px;
+        margin: 10px 0;
+        background-color: #4285F4;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        color: white
+        
+    }
+
+
     /* Sign In Form Styles */
     .signin-form {
         max-width: 600px;
@@ -113,7 +127,7 @@ function signIn() {
     .signin-btn {
         width: 100%;
         padding: 12px;
-        background-color: #5a6268;
+        background-color: #45a049;
         color: white;
         border: none;
         border-radius: 5px;
@@ -162,7 +176,7 @@ function signIn() {
 
 
         <!-- Terms and Conditions -->
-        <p><a href="#" id="view-terms">View Terms and Services</a></p>
+        <a href="termsandservices.php" target="_blank" style="color: #6c757d;">View Terms and Services</a>
         <div class="terms">
             <input type="checkbox" id="accept-tos" required>
             <label for="accept-tos">I accept the terms and services</label>
@@ -179,134 +193,90 @@ function signIn() {
         });
     </script>
 
-<!-- Registration Form -->
-<form action="save.php" method="post" class="registration-form">
-    <h2>Register as SK</h2>
-    
-    <div class="form-group">
-        <label for="first_name">First Name</label>
-        <input type="text" id="first_name" name="first_name" required>
+
+
+<body>
+    <div class="container">
+        <h2>Register as SK</h2>
+        <form action="save.php" method="post" class="registration-form">
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="middle_name">Middle Name</label>
+                <input type="text" id="middle_name" name="middle_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="birthdate">Birthdate</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="text" id="mobile" name="mobile" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="civil_status">Civil Status</label>
+                <select id="civil_status" name="civil_status" required>
+                    <option value="single">Single</option>
+                    <option value="married">Married</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="barangay">Barangay</label>
+                <select id="barangay" name="barangay" required>
+                    <option value="hagonoy">Hagonoy</option>
+                    <option value="south_signal">South Signal</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="province">Province</label>
+                <select id="province" name="province" required>
+                    <option value="province1">Province 1</option>
+                    <option value="province2">Province 2</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City/Municipality</label>
+                <select id="city" name="city" required>
+                    <option value="hagonoy">Hagonoy</option>
+                    <option value="south_signal">South Signal</option>
+                </select>
+            </div>
+
+            <button type="submit" class="register-btn">Register</button>
+        </form>
     </div>
-
-    <div class="form-group">
-        <label for="middle_name">Middle Name</label>
-        <input type="text" id="middle_name" name="middle_name" required>
-    </div>
-
-    <div class="form-group">
-        <label for="last_name">Last Name</label>
-        <input type="text" id="last_name" name="last_name" required>
-    </div>
-
-    <div class="form-group">
-        <label for="gender">Gender</label>
-        <select id="gender" name="gender" required>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="birthdate">Birthdate</label>
-        <input type="date" id="birthdate" name="birthdate" required>
-    </div>
-
-    <div class="form-group">
-    <label for="age">Age</label>
-    <input type="number" id="age" name="age" required>
-    </div>
-
-
-    <div class="form-group">
-        <label for="mobile">Mobile Number</label>
-        <input type="text" id="mobile" name="mobile" required>
-    </div>
-
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-    </div>
-
-    <div class="form-group">
-        <label for="civil_status">Civil Status</label>
-        <select id="civil_status" name="civil_status" required>
-            <option value="single">Single</option>
-            <option value="married">Married</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="barangay">Barangay</label>
-        <select id="barangay" name="barangay" required>
-            <option value="hagonoy">Hagonoy</option>
-            <option value="south_signal">South Signal</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="province">Province</label>
-        <select id="province" name="province" required>
-            <option value="province1">Province 1</option>
-            <option value="province2">Province 2</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="city">City/Municipality</label>
-        <select id="city" name="city" required>
-            <option value="hagonoy">Hagonoy</option>
-            <option value="south_signal">South Signal</option>
-        </select>
-    </div>
-
-    <button type="submit" class="register-btn">Register</button>
-</form>
-
-<style>
-    .registration-form {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #f7f7f7;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .registration-form h2 {
-        text-align: center;
-        margin-bottom: 20px;
-        font-size: 24px;
-    }
-    .form-group {
-        margin-bottom: 15px;
-    }
-    .form-group label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 5px;
-        font-size: 14px;
-    }
-    .form-group input, 
-    .form-group select {
-        width: 100%;
-        padding: 10px;
-        font-size: 14px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-    }
-    .register-btn {
-        width: 100%;
-        padding: 10px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-    }
-    .register-btn:hover {
-        background-color: #0056b3;
-    }
-</style>
+</body>
 </body>
 </html>
